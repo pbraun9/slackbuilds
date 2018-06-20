@@ -1,0 +1,11 @@
+pacemaker: pacemaker (High-Availability cluster resource manager)
+pacemaker: 
+pacemaker: Pacemaker is an advanced, scalable High-Availability cluster
+pacemaker: resource manager.
+pacemaker: 
+pacemaker: You might also want to install corosync, pacemaker, resource-agents,
+pacemaker: crmsh, fence-agents and eventually cluster-glue.
+pacemaker: 
+pacemaker: You must have a haclient group and hacluster user to run this script.
+pacemaker:   groupadd -g 226 haclient
+pacemaker:   useradd -u 226 -g 226 -c "Pacemaker" -d / -s /bin/false hacluster

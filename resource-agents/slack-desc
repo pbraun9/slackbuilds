@@ -1,0 +1,11 @@
+resource-agents: resource-agents (cluster service executables)
+resource-agents: 
+resource-agents: Combined repository of OCF agents from the RHCS and Linux-HA projects
+resource-agents: 
+resource-agents: You might also want to install corosync, pacemaker, resource-agents,
+resource-agents: crmsh, fence-agents and eventually cluster-glue.
+resource-agents: 
+resource-agents: Define OCF_ROOT and eventually OCF_RESKEY_<param> if you need to
+resource-agents: test the resource executables manually.
+resource-agents:
+resource-agents:

@@ -1,0 +1,9 @@
+corosync: corosync (Cluster Engine)
+corosync: 
+corosync: The Corosync Cluster Engine is a Group Communication System with
+corosync: additional features for implementing high availability within
+corosync: applications.
+corosync: 
+corosync: You might also want to install corosync, pacemaker, resource-agents,
+corosync: crmsh, fence-agents and eventually cluster-glue.
+corosync:
