@@ -1,6 +1,16 @@
 # slackbuilds.org (SBo) packages
 
-## Linux-HA --> ClusterLabs
+## Delivered and Accepted!
+
+- https://slackbuilds.org/repository/14.2/system/corosync/
+- https://slackbuilds.org/repository/14.2/system/pacemaker/
+- https://slackbuilds.org/repository/14.2/system/resource-agents/
+- https://slackbuilds.org/repository/14.2/system/fence-agents/
+- https://slackbuilds.org/repository/14.2/system/cluster-glue/
+
+Those are also required: [check](https://slackbuilds.org/repository/14.2/development/check/), [libqb](https://slackbuilds.org/repository/14.2/libraries/libqb/) and [crmsh](https://slackbuilds.org/repository/14.2/system/crmsh/).
+
+## Homepages
 
 Heartbeat has been replaced by Corosync, there is no need to build nor install it.
 
