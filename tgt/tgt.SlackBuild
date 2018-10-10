@@ -74,6 +74,9 @@ find -L . \
 make
 mandir=/usr/man docdir=/usr/doc/$PRGNAM-$VERSION make install DESTDIR=$PKG
 
+mkdir -p $PKG/etc/rc.d/init.d/
+cp scripts/initd.sample $PKG/etc/rc.d/init.d/tgtd
+
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
