@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 # Slackware build script for pacemaker
 
@@ -24,8 +23,8 @@ set -e
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=pacemaker
-VERSION=${VERSION:-2.0.0_rc5}
-TARVER=${VERSION/_/-}
+VERSION=${VERSION:-2.0.2}
+TARVER="Pacemaker-$VERSION"
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -56,7 +55,8 @@ else
   LIBDIRSUFFIX=""
 fi
 
-# Check for hacluster user account
+set -e
+
 if ! getent passwd hacluster 2>&1 > /dev/null; then
   echo "  You must have a haclient group and hacluster user to run this script."
   echo "    groupadd -g 226 haclient"
@@ -64,7 +64,6 @@ if ! getent passwd hacluster 2>&1 > /dev/null; then
   exit 1                                 
 fi               
 
-# Check for haclient group                 
 if ! getent group haclient 2>&1 > /dev/null; then
   echo "  You must have a haclient group to run this script."
   echo "    groupadd -g 226 haclient"
@@ -74,9 +73,9 @@ fi
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-Pacemaker-$TARVER
-tar xvf $CWD/Pacemaker-$TARVER.tar.gz
-cd $PRGNAM-Pacemaker-$TARVER
+rm -rf $PRGNAM-$TARVER
+tar xvf $CWD/$TARVER.tar.gz
+cd $PRGNAM-$TARVER
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -84,11 +83,14 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
+#dirty fix corosync and pacemaker builds against libqb 1.0.5
+#make CPPFLAGS=-DQB_KILL_ATTRIBUTE_SECTION
+#https://www.mail-archive.com/users@clusterlabs.org/msg07277.html
+
 ./autogen.sh
-#this is a release candidate, -g debugging enabled
-FFLAGS="$SLKCFLAGS -g" \
-CFLAGS="$SLKCFLAGS -g" \
-CXXFLAGS="$SLKCFLAGS -g" \
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+CPPFLAGS="-DQB_KILL_ATTRIBUTE_SECTION" \
 ./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
@@ -96,19 +98,16 @@ CXXFLAGS="$SLKCFLAGS -g" \
   --localstatedir=/var \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
-  --build=$ARCH-slackware-linux \
-	--with-corosync \
-	--disable-systemd \
-	--disable-dependency-tracking
+  --with-corosync \
+  --disable-systemd \
+  --disable-dependency-tracking \
+  --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
-#there is
-make install-strip
 
-#mandir defined
-#docdir defined
-#no infodir
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
@@ -121,7 +120,6 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
-#cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}
