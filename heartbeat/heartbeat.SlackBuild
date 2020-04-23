@@ -86,12 +86,21 @@ CXXFLAGS="$SLKCFLAGS" \
 
 make
 make install DESTDIR=$PKG
+mv $PKG/etc/init.d/heartbeat $PKG/etc/init.d/heartbeat.new
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+
+#/etc/init.d/heartbeat script is already deployed by make install
+
+#/etc/ha.d/ folder is already created by make install, adding sample configs
+cat doc/authkeys > $PKG/etc/ha.d/authkeys.new
+cat doc/ha.cf > $PKG/etc/ha.d/ha.cf.new
+cat doc/haresources > $PKG/etc/ha.d/haresources.new
+chmod 600 $PKG/etc/ha.d/authkeys.new
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
 cp -a \
@@ -106,6 +115,7 @@ cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-tgz}

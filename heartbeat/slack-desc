@@ -10,7 +10,7 @@ heartbeat: Linux-HA heartbeat
 heartbeat:
 heartbeat: Old school cluster infrastructure for GNU/Linux
 heartbeat:
-heartbeat: Allows you to avoid Corosync and possibly even Pacemaker
+heartbeat: Allows you to avoid Corosync and even Pacemaker
 heartbeat:
 heartbeat: No CRMSH nor PCS required
 heartbeat:
