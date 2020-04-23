@@ -1,10 +1,7 @@
-# slackbuilds.org (SBo) packages
+## [Linux-HA old school](https://pub.nethence.com/server/linuxha-oldschool)
 
-- https://slackbuilds.org/repository/14.2/system/corosync/
-- https://slackbuilds.org/repository/14.2/system/pacemaker/
+- https://slackbuilds.org/repository/14.2/system/cluster-glue/
+- https://slackbuilds.org/repository/14.2/system/heartbeat/
 - https://slackbuilds.org/repository/14.2/system/resource-agents/
 - https://slackbuilds.org/repository/14.2/system/fence-agents/
-- https://slackbuilds.org/repository/14.2/system/cluster-glue/
-
-[Setting up Corosync and Pacemaker](http://pub.nethence.com/server/linuxha)
 
