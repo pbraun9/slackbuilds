@@ -9,11 +9,11 @@
 heartbeat: Linux-HA heartbeat
 heartbeat:
 heartbeat: Old school cluster infrastructure for GNU/Linux
-heartbeat:
 heartbeat: Allows you to avoid Corosync and even Pacemaker
 heartbeat:
 heartbeat: No CRMSH nor PCS required
 heartbeat:
-heartbeat:
+heartbeat: You might also want to install cluster-glue, heartbeat,
+heartbeat: resource-agents, fence-agents.
 heartbeat:
 heartbeat:
