@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for resource-agents
+# Slackware build script for heartbeat
 
 # Copyright 2018 Pierre-Philipp Braun, Russia
 # All rights reserved.

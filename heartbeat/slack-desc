@@ -6,7 +6,7 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
          |-----handy-ruler------------------------------------------------------|
-heartbeat: Linux-HA heartbeat
+heartbeat: heartbeat (Linux-HA heartbeat)
 heartbeat:
 heartbeat: Old school cluster infrastructure for GNU/Linux
 heartbeat: Allows you to avoid Corosync and even Pacemaker
