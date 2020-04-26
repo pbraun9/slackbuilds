@@ -3,7 +3,7 @@ tgt: SCSI target driver (iSCSI, Fibre Channel, SRP, etc) creation and
 tgt: maintenance
 tgt: 
 tgt: This is the user-space code.  You most probably already got the
-tgt: kernel-space code available.
+tgt: kernel-space code enabled
 tgt:
 tgt:
 tgt:
