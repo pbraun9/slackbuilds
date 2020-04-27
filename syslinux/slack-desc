@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+         |-----handy-ruler------------------------------------------------------|
+heartbeat: syslinux (The Syslinux Project)
+heartbeat:
+heartbeat: The Syslinux Project covers lightweight bootloaders for MS-DOS FAT
+heartbeat: filesystems (SYSLINUX), network booting (PXELINUX), bootable
+heartbeat: "El Torito" CD-ROMs (ISOLINUX), and Linux ext2/ext3/ext4 or btrfs
+heartbeat: filesystems (EXTLINUX). The project also includes MEMDISK, a tool to
+heartbeat: boot legacy operating systems (such as DOS) from nontraditional
+heartbeat: media; it is usually used in conjunction with PXELINUX and ISOLINUX.
+heartbeat:
+heartbeat:
+heartbeat:

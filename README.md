@@ -14,5 +14,9 @@ See [this guide](https://pub.nethence.com/server/linuxha-oldschool) on how to se
 
 ## iSCSI STGT
 
-- https://slackbuilds.org/repository/14.2/libraries/tgt/
+- https://slackbuilds.org/repository/14.2/network/tgt/
+
+## SYSLINUX v6
+
+- (not submitted to SBo as it would conflict with base)
 
