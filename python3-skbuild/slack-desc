@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+               |-----handy-ruler------------------------------------------------------|
+python3-astroid: python3-skbuild (build system for C/C++/Fortran/Cython extensions)
+python3-astroid:
+python3-astroid: Better support is available for additional compilers, build systems,
+python3-astroid: cross compilation, and locating dependencies and determining their
+python3-astroid: build requirements.
+python3-astroid:
+python3-astroid: The scikit-build package is fundamentally just glue between the
+python3-astroid: setuptools Python module and CMake.
+python3-astroid:
+python3-astroid: https://github.com/scikit-build/scikit-build
+python3-astroid:
