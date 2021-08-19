@@ -3,7 +3,7 @@
 # Slackware build script for heartbeat
 
 PRGNAM=heartbeat
-VERSION=${VERSION:-20200423}
+VERSION=${VERSION:-3.0.6.11}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -62,7 +62,8 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --disable-dependency-tracking \
   --build=$ARCH-slackware-linux \
-  --disable-rpath
+  --disable-rpath \
+  --disable-fatal-warnings
 
 make
 make install DESTDIR=$PKG
