@@ -75,10 +75,6 @@ CXXFLAGS="$SLKCFLAGS" \
   --disable-ovmf \
   --with-extra-qemuu-configure-args="--sysconfdir=/etc --audio-drv-list= --disable-slirp --disable-blobs --without-default-features"
 
-#  --disable-rombios already disabled by --disable-qemu-traditional
-#  --disable-debug
-#  --disable-pvshim
-
 mkdir -p $PKG/usr/man
 make install-xen DESTDIR=$PKG
 make install-tools DESTDIR=$PKG

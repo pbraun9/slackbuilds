@@ -1,5 +1,7 @@
 # Slackware Linux package build scripts
 
+Binaries for those builds [are available](https://lab.nethence.com/slackbuilds/)
+
 ## Contents
 
 XEN & booting
@@ -9,12 +11,13 @@ XEN & booting
 	python3-skbuild
 	syslinux-next
 
-Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
+Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool) & DRBD
 
 	cluster-glue
 	resource-agents
 	heartbeat
 	fence-agents
+	drbd-utils-heartbeat
 
 REISER4 & DMA
 
