@@ -9,6 +9,7 @@ XEN & booting
 	xen-nohvm
 	python3-ninja
 	python3-skbuild
+	ucl
 	syslinux-next
 
 Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool) & DRBD
