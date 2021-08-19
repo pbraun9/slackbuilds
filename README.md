@@ -1,29 +1,61 @@
-# Slackbuilds for HA, iSCSI and REISER4
+# Slackware Linux package build scripts
+
+## Contents
+
+XEN & booting
+
+	xen-nohvm
+	python3-ninja
+	python3-skbuild
+	syslinux-next
+
+Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
+
+	cluster-glue
+	resource-agents
+	heartbeat
+
+REISER4 & DMA
+
+	libaal
+	reiser4progs
+	dma
 
 ## Status
 
-Compare versions of this repository vs. what's been approved at SBo
+Some of those are submitted to SlackBuilds.org.
+
+For the record, here's how to compare versions of this repository vs. what's been approved at SBo
 
 	grep VERSION= */*
 
+<!--
+XEN & booting
+-->
+
+REISER4
+
 	for url in \
-		https://slackbuilds.org/repository/14.2/system/cluster-glue/ \
-		https://slackbuilds.org/repository/14.2/network/dma/ \
-		https://slackbuilds.org/repository/14.2/system/fence-agents/ \
-		https://slackbuilds.org/repository/14.2/system/heartbeat/ \
 		https://slackbuilds.org/repository/14.2/libraries/libaal/ \
 		https://slackbuilds.org/repository/14.2/system/reiser4progs/ \
-		https://slackbuilds.org/repository/14.2/system/resource-agents/ \
-		https://slackbuilds.org/repository/14.2/network/tgt/ \
+		https://slackbuilds.org/repository/14.2/network/dma/ \
 		; do
 		lynx -dump $url | grep ']14\.2'
 	done; unset url
 
-Note SYSLINUX v6 was not submitted to SBo as it conflicts with base.
+Linux-HA reloaded
 
-Regarding the Heartbeat package and friends, see [Linux-HA old-school](https://pub.nethence.com/server/linuxha-oldschool).
+        for url in \
+                https://slackbuilds.org/repository/14.2/system/cluster-glue/ \
+                https://slackbuilds.org/repository/14.2/system/resource-agents/ \
+                https://slackbuilds.org/repository/14.2/system/heartbeat/ \
+                https://slackbuilds.org/repository/14.2/system/fence-agents/ \
+                ; do
+                lynx -dump $url | grep ']14\.2'
+        done; unset url
 
-## TODO
+## Resources
 
-- appy debian [patches to syslinux](https://pub.nethence.com/booting/syslinux-install)
+SlackBuilds.org
+https://slackbuilds.org/
 
