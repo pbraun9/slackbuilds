@@ -14,6 +14,7 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 	cluster-glue
 	resource-agents
 	heartbeat
+	fence-agents
 
 REISER4 & DMA
 
