@@ -83,15 +83,12 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux \
-  --with-udev \
   --with-xen \
   --with-heartbeat \
   --without-pacemaker \
   --without-rgmanager \
   --with-bashcompletion \
-  --with-distro=slackware \
-  --with-prebuiltman \
-  --build=$ARCH-slackware-linux
+  --with-prebuiltman
 
 make
 make install DESTDIR=$PKG
