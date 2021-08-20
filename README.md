@@ -12,15 +12,19 @@ XEN & booting
 	ucl
 	syslinux-next
 
-Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool) & DRBD
+Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 
 	cluster-glue
 	resource-agents
 	heartbeat
 	fence-agents
+
+DRBD v9
+
+	drbd-kernel
 	drbd-utils-heartbeat
 
-REISER4 & DMA
+MISC
 
 	libaal
 	reiser4progs
@@ -63,4 +67,10 @@ Linux-HA reloaded
 
 SlackBuilds.org
 https://slackbuilds.org/
+
+Writing A SlackBuild Script
+https://www.slackwiki.com/Writing_A_SlackBuild_Script
+
+Index of /templates
+https://slackbuilds.org/templates/
 
