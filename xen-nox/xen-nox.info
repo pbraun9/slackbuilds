@@ -1,0 +1,12 @@
+PRGNAM="xen-nox"
+VERSION="54c9736"
+HOMEPAGE="https://xenproject.org/"
+DOWNLOAD="https://lab.nethence.com/nunux/xen-54c9736.tar.gz \
+	https://lab.nethence.com/nunux/qemu-xen-136c34c.tar.gz"
+MD5SUM="0ffbf8eaf8a6d7bbf6574bb5c1a780d8 \
+	9a2d0977de4eef2970f5c85049dfea70"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="acpica yajl python3-ninja"
+MAINTAINER="Pierre-Philipp Braun"
+EMAIL="pbraun@nethence.com"

@@ -1,0 +1,12 @@
+The xen-nox package contains the XEN micro-kernel and tools for PV and PVH modes, including the good old xenstore daemon (written in C).
+
+QEMU-XEN is built without X11 support (no GTK, SDL nor OpenGL).
+
+The qemu-xen source tarball contains those submodules which are required for building
+
+	https://gitlab.com/qemu-project/keycodemapdb.git
+	https://gitlab.com/qemu-project/dtc.git
+	https://github.com/mesonbuild/meson.git
+	https://git.qemu.org/git/berkeley-softfloat-3.git
+	https://git.qemu.org/git/berkeley-testfloat-3.git
+
