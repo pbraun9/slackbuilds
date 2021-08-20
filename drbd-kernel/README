@@ -1,0 +1,10 @@
+This is DRBD v9 module (there's v8 built-into the vanilla kernel)
+
+The binary flavor of this package obviously won't apply to other kernel versions than the one shipped with the Slackware release.
+
+If you run a different kernel from the release, you need to install the package using the build script.
+
+Besides, to build the package for a kernel different from the running one e.g.
+
+	KERNEL=5.10.60 ./drbd-kernel.SlackBuild
+
