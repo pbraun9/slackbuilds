@@ -1,1 +1,0 @@
-The xen-nohvm package contains the XEN micro-kernel and tools for PV and PVH modes, including the good old xenstore daemon (written in C).
