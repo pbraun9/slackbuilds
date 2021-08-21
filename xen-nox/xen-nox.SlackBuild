@@ -6,7 +6,7 @@ PRGNAM=xen-nox
 SRCNAM=xen
 VERSION=${VERSION:-54c9736}
 
-QVERSION=136c34c
+QVER=136c34c
 
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
@@ -47,8 +47,8 @@ cd $TMP
 rm -rf $SRCNAM-$VERSION
 tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
 
-tar xzf $CWD/qemu-xen-QVERSION.tar.gz -C $SRCNAM-$VERSION/tools/
-ln -s qemu-xen-$QVERSION $SRCNAM-$VERSION/tools/qemu-xen
+tar xzf $CWD/qemu-xen-$QVER.tar.gz -C $SRCNAM-$VERSION/tools/
+ln -s qemu-xen-$QVER $SRCNAM-$VERSION/tools/qemu-xen
 
 cd $SRCNAM-$VERSION
 chown -R root:root .
@@ -85,13 +85,13 @@ CXXFLAGS="$SLKCFLAGS" \
 		--audio-drv-list= \
 		--disable-slirp \
 		--disable-blobs \
-		--without-default-features \
+		--disable-plugins \
 		--disable-gtk \
 		--disable-sdl \
 		--disable-sdl-image \
 		--disable-opengl \
 		--disable-capstone \
-		--disable-fuse
+		--disable-fuse \
 		--disable-fuse-lseek"
 
 mkdir -p $PKG/usr/man
