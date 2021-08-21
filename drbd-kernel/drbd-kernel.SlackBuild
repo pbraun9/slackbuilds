@@ -62,7 +62,7 @@ else
 fi
 
 if [[ ! -e /lib/modules/$KVER/build || ! -e /lib/modules/$KVER/source ]]; then
-        cat <<EOF
+  cat <<EOF
 
   You need the kernel source available (install kernel-source)
 
@@ -70,6 +70,7 @@ if [[ ! -e /lib/modules/$KVER/build || ! -e /lib/modules/$KVER/source ]]; then
         ls -lF /lib/modules/$KVER/source
 
 EOF
+  exit 1
 fi
 
 make
