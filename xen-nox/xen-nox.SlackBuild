@@ -68,7 +68,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --build=$ARCH-slackware-linux \
-  --with-initddir=/etc/init.d \
+  --with-initddir=/etc/rc.d/init.d \
   --disable-stubdom \
   --disable-ioemu-stubdom \
   --disable-pv-grub \
@@ -90,7 +90,9 @@ CXXFLAGS="$SLKCFLAGS" \
 		--disable-sdl \
 		--disable-sdl-image \
 		--disable-opengl \
-		--disable-capstone"
+		--disable-capstone \
+		--disable-fuse
+		--disable-fuse-lseek"
 
 mkdir -p $PKG/usr/man
 make install-xen DESTDIR=$PKG
