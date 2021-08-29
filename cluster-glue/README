@@ -1,6 +1,6 @@
 cluster-glue (Reusable Cluster Components)
 
-Additional cluster tools to play with e.g. some STONITH scripts.
+Linux-HA / ClusterLabs headers and tools e.g. STONITH scripts.
 
 You might also want to install cluster-glue, heartbeat, resource-agents,
 fence-agents.

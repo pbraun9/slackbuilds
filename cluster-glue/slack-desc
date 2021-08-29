@@ -8,7 +8,7 @@
             |-----handy-ruler------------------------------------------------------|
 cluster-glue: cluster-glue (Reusable Cluster Components)
 cluster-glue:
-cluster-glue: Additional cluster tools to play with e.g. some STONITH scripts.
+cluster-glue: Linux-HA / ClusterLabs headers and tools e.g. STONITH scripts.
 cluster-glue:
 cluster-glue: You might also want to install cluster-glue, heartbeat,
 cluster-glue: resource-agents, fence-agents.
