@@ -14,8 +14,8 @@ XEN & booting
 Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 
 	cluster-glue
-	resource-agents
 	heartbeat
+	resource-agents
 	fence-agents
 
 DRBD v9

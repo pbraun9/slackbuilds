@@ -75,9 +75,6 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
-#/etc/init.d/heartbeat script is already deployed by make install
-
-#/etc/ha.d/ folder is already created by make install, adding sample configs
 cat doc/authkeys > $PKG/etc/ha.d/authkeys.new
 cat doc/ha.cf > $PKG/etc/ha.d/ha.cf.new
 cat doc/haresources > $PKG/etc/ha.d/haresources.new
