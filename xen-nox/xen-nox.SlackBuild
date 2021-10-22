@@ -4,9 +4,9 @@
 
 PRGNAM=xen-nox
 SRCNAM=xen
-VERSION=${VERSION:-54c9736}
+VERSION=${VERSION:-f50ef17}
 
-QVER=136c34c
+QVER=b6e5398
 
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
@@ -44,13 +44,14 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 
 cd $TMP
-rm -rf $SRCNAM-$VERSION
+rm -rf $SRCNAM
 tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
 
-tar xzf $CWD/qemu-xen-$QVER.tar.gz -C $SRCNAM-$VERSION/tools/
-ln -s qemu-xen-$QVER $SRCNAM-$VERSION/tools/qemu-xen
+tar xzf $CWD/qemu-xen-$QVER.tar.gz -C $SRCNAM/tools/
+# no need for a versioned symlinks as we've tarred-up the repo without a version
+#ln -s qemu-xen-$QVER $SRCNAM/tools/qemu-xen
 
-cd $SRCNAM-$VERSION
+cd $SRCNAM
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -91,6 +92,8 @@ CXXFLAGS="$SLKCFLAGS" \
 		--disable-sdl-image \
 		--disable-opengl \
 		--disable-capstone \
+		--disable-slirp-smbd \
+		--disable-spice-protocol \
 		--disable-fuse \
 		--disable-fuse-lseek"
 

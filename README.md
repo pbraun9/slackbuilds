@@ -4,12 +4,17 @@ Binaries for those builds [are available](https://lab.nethence.com/slackbuilds/)
 
 ## Contents
 
+SYSLINUX
+
+	syslinux-next
+	ucl-preview
+
 XEN & booting
 
+	acpica-preview
 	xen-nox
 	python3-ninja
 	python3-skbuild
-	syslinux-next
 
 Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 
