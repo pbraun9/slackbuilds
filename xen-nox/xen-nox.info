@@ -1,5 +1,5 @@
 PRGNAM="xen-nox"
-VERSION="54c9736"
+VERSION="f50ef17"
 HOMEPAGE="https://xenproject.org/"
 DOWNLOAD="https://lab.nethence.com/nunux/xen-f50ef17.tar.gz \
 	https://lab.nethence.com/nunux/qemu-xen-b6e5398.tar.gz"
