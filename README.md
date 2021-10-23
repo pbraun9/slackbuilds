@@ -1,6 +1,6 @@
 # Slackware Linux package build scripts
 
-Binaries for those builds [are available](https://lab.nethence.com/slackbuilds/)
+Binaries for those builds [are available](https://lab.nethence.com/slackpkgs/)
 
 ## Contents
 
@@ -9,7 +9,7 @@ SYSLINUX
 	syslinux-next
 	ucl-preview
 
-XEN & booting
+XEN
 
 	acpica-preview
 	xen-nox
@@ -26,12 +26,16 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 DRBD v9
 
 	drbd-kernel
-	drbd-utils-heartbeat
+	drbd-utils-preview
+
+FILE-SYSTEMS
+
+	libaal
+	ocfs2-tools-preview
+	reiser4progs
 
 MISC
 
-	libaal
-	reiser4progs
 	dma
 
 ## Resources

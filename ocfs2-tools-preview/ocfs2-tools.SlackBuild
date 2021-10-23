@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Slackware build script for drbd-utils
+# Slackware build script for ocfs2-tools
 
-# Copyright 2014, 2015, 2016, 2017, 2018, 2019, 2020  Mario Preksavec, Zagreb, Croatia
+# Copyright 2019  Mario Preksavec, Zagreb, Croatia
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,8 +22,8 @@
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=drbd-utils
-VERSION=${VERSION:-9.19.0}
+PRGNAM=ocfs2-tools
+VERSION=${VERSION:-1.8.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
@@ -59,9 +59,9 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
+rm -rf $PRGNAM-{$VERSION,$PRGNAM-$VERSION}
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+cd $PRGNAM-$PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -69,57 +69,45 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-# This patch allows resources with path: drbd:/dev/drbd/by-res/<resource>
-# Xen HVM domains will be able to live migrate with qemu-xen-traditional
-patch -p1 <$CWD/patches/xen_handle_physical_device_paths.diff
-
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-./configure \
+./autogen.sh \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc \
   --localstatedir=/var \
   --mandir=/usr/man \
-  --docdir=/usr/doc/$PRGNAM-$VERSION \
-  --build=$ARCH-slackware-linux \
-  --with-xen \
-  --without-pacemaker \
-  --without-rgmanager \
-  --with-bashcompletion \
-  --with-prebuiltman
+  --enable-ocfs2console=no \
+  --build=$ARCH-slackware-linux
 
 make
 make install DESTDIR=$PKG
+
+# Copy init scripts and fix them
+install -D -m0755 -oroot -groot vendor/common/o2cb.init $PKG/etc/rc.d/rc.o2cb.new
+install -D -m0755 -oroot -groot vendor/common/ocfs2.init $PKG/etc/rc.d/rc.ocfs2.new
+sed -e 's|/etc/redhat-release|/etc/init.d/functions|' \
+    -i $PKG/etc/rc.d/rc.o2cb.new \
+    -i $PKG/etc/rc.d/rc.ocfs2.new
+
+# Default settings, udev rules and sample configuration
+install -D -m0644 -oroot -groot vendor/common/o2cb.sysconfig \
+  $PKG/etc/default/o2cb.new
+install -D -m0644 -oroot -groot vendor/common/51-ocfs2.rules \
+  $PKG/lib/udev/rules.d/51-ocfs2.rules
+install -D -m0644 -oroot -groot documentation/samples/cluster.conf \
+  $PKG/etc/ocfs2/cluster.conf.sample
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
-
-# Unbreak manpage symlinks after gzip (above)
-find $PKG/usr/man -type l ! -name '*.gz' \
-  -exec bash -c 'ln -s $(readlink $1).gz $1.gz && unlink $1' doh {} \;
-
-mkdir -p $PKG/etc/rc.d/init.d/
-sed -r '/^[[:space:]]+handle_linstor_loopback /d' $PKG/etc/init.d/drbd > $PKG/etc/rc.d/init.d/drbd.new
-chmod +x $PKG/etc/rc.d/init.d/drbd.new
-rm $PKG/etc/init.d/drbd
-rmdir $PKG/etc/init.d/
-
-mv $PKG/etc/drbd.conf $PKG/etc/drbd.conf.new
-mv $PKG/etc/drbd.d/global_common.conf $PKG/etc/drbd.d/global_common.conf.new
-
-# Let's not connect to the Internet, user knows what he wants to do
-sed -i 's/\(usage-count\) yes/\1 no/' $PKG/etc/drbd.d/global_common.conf.new
-
-if [ $ARCH = "x86_64" ]; then
-  mv $PKG/usr/lib $PKG/usr/lib${LIBDIRSUFFIX}
-fi
+for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a COPYING ChangeLog README.md $PKG/usr/doc/$PRGNAM-$VERSION
+cp CREDITS MAINTAINERS README.O2CB documentation/*.* $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+cat $CWD/README.SLACKWARE > $PKG/usr/doc/$PRGNAM-$VERSION/README.SLACKWARE
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
