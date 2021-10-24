@@ -1,9 +1,5 @@
 # Slackware Linux package build scripts
 
-Binaries for those builds [are available](https://lab.nethence.com/slackpkgs/)
-
-## Contents
-
 SYSLINUX
 
 	syslinux-next
@@ -32,20 +28,12 @@ FILE-SYSTEMS
 
 	libaal
 	ocfs2-tools-preview
+	partclone-preview
 	reiser4progs
 
 MISC
 
 	dma
 
-## Resources
-
-SlackBuilds.org
-https://slackbuilds.org/
-
-Writing A SlackBuild Script
-https://www.slackwiki.com/Writing_A_SlackBuild_Script
-
-Index of /templates
-https://slackbuilds.org/templates/
+Binaries for those builds are available [over there](https://lab.nethence.com/slackpkgs/)
 
