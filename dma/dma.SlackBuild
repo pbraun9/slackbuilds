@@ -49,9 +49,13 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-PREFIX=/usr MAN=/usr/man make
-PREFIX=/usr MAN=/usr/man make install DESTDIR=$PKG
-PREFIX=/usr MAN=/usr/man make install-etc DESTDIR=$PKG
+export PREFIX=/usr
+export LIBEXEC=/usr/lib${LIBDIRSUFFIX}
+export MAN=/usr/man
+
+make
+make install DESTDIR=$PKG
+make install-etc DESTDIR=$PKG
 # sendmail-link
 # mailq-link
 # install-spool-dirs
