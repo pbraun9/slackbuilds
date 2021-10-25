@@ -33,6 +33,7 @@ FILE-SYSTEMS
 
 MISC
 
+	clusterit
 	dma
 
 Binaries for those builds are available [over there](https://lab.nethence.com/slackpkgs/)
