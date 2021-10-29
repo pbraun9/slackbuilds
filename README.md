@@ -1,16 +1,27 @@
 # Slackware Linux package build scripts
 
-SYSLINUX
+DRBD V9
 
-	syslinux-next
-	ucl-preview
+        drbd-kernel
+        drbd-utils-preview
 
 XEN
 
-	acpica-preview
-	xen-nox
+	acpica-preview		-- updated version
+	libvirt-preview		-- updated version (meson build)
 	python3-ninja
 	python3-skbuild
+	urlgrabber-preview	-- updated version
+	xen-nox			-- no SDL no GTK no FUSE and older xenstore daemon
+
+BOOTING
+
+        syslinux-next		-- newer version, conflicts with base
+        ucl-preview
+
+VRRP
+
+	keepalived-preview	-- nftables and libipset re-enabled
 
 Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 
@@ -18,11 +29,6 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 	heartbeat
 	resource-agents
 	fence-agents
-
-DRBD v9
-
-	drbd-kernel
-	drbd-utils-preview
 
 FILE-SYSTEMS
 

@@ -1,0 +1,8 @@
+PRGNAM="urlgrabber"
+VERSION="4.0.0"
+HOMEPAGE="http://urlgrabber.baseurl.org/download/"
+DOWNLOAD="http://urlgrabber.baseurl.org/download/urlgrabber-4.0.0.tar.gz"
+MD5SUM="0124b235551e8c791f22e1a54c34e4e6"
+REQUIRES=""
+MAINTAINER="Ricardo J. Barberis"
+EMAIL="ricardo.barberis@gmail.com"
