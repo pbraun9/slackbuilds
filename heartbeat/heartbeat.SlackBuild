@@ -63,11 +63,16 @@ CXXFLAGS="$SLKCFLAGS" \
   --disable-dependency-tracking \
   --build=$ARCH-slackware-linux \
   --disable-rpath \
-  --disable-fatal-warnings
+  --disable-ansi \
+  --disable-fatal-warnings \
+  --disable-times-kludge \
+  --enable-bundled-ltdl \
+  --enable-dopd
+  # --enable-quorumd \
 
 make
 make install DESTDIR=$PKG
-mv $PKG/etc/rc.d/init.d/heartbeat $PKG/etc/rc.d/init.d/heartbeat.new
+mv $PKG/etc/rc.d/init.d/heartbeat $PKG/etc/rc.d/rc.heartbeat.new
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
@@ -81,13 +86,9 @@ cat doc/haresources > $PKG/etc/ha.d/haresources.new
 chmod 600 $PKG/etc/ha.d/authkeys.new
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a \
-  README \
-  $PKG/usr/doc/$PRGNAM-$VERSION/README.heartbeat
+cp -a README $PKG/usr/doc/$PRGNAM-$VERSION/README.heartbeat
 doc=`find doc/ -type f | grep -vE '.([[:digit:]]|in|am|am.orig)$'`
-cp -a \
-  $doc \
-  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a $doc $PKG/usr/doc/$PRGNAM-$VERSION
 unset doc
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

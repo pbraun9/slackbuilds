@@ -4,8 +4,7 @@ config() {
   # If there's no config file by that name, mv it over:
   if [ ! -r $OLD ]; then
     mv $NEW $OLD
-  elif [ "`cat $OLD | md5sum`" = "`cat $NEW | md5sum`" ]; then # toss the redundant cop
-y
+  elif [ "`cat $OLD | md5sum`" = "`cat $NEW | md5sum`" ]; then # toss the redundant copy
     rm $NEW
   fi
   # Otherwise, we leave the .new copy for the admin to consider...
@@ -24,4 +23,4 @@ preserve_perms() {
 config etc/ha.d/authkeys.new
 config etc/ha.d/ha.cf.new
 config etc/ha.d/haresources.new
-preserve_perms etc/rc.d/init.d/heartbeat.new
+preserve_perms etc/rc.d/rc.heartbeat.new
