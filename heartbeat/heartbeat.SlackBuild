@@ -60,7 +60,6 @@ CXXFLAGS="$SLKCFLAGS" \
   --localstatedir=/var \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
-  --disable-dependency-tracking \
   --build=$ARCH-slackware-linux \
   --disable-rpath \
   --disable-ansi \

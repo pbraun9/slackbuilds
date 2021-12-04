@@ -100,7 +100,6 @@ CPPFLAGS="-DQB_KILL_ATTRIBUTE_SECTION" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --with-corosync \
   --disable-systemd \
-  --disable-dependency-tracking \
   --build=$ARCH-slackware-linux
 
 make
