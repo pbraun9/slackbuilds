@@ -3,7 +3,7 @@
 # Slackware build script for syslinux-next
 
 PRGNAM=syslinux
-VERSION=${VERSION:-05ac953}
+VERSION=${VERSION:-6.04-debian}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 
