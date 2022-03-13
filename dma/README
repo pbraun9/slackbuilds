@@ -1,18 +1,4 @@
-Small and efficient outbound STARTTLS-calable MTA.
-
-Here's how to finish-up its deployment
-
-        mv /usr/sbin/sendmail /usr/sbin/sendmail.dist
-        chmod -x /usr/sbin/sendmail.dist
-
-        ln -s dma /usr/sbin/mailq
-        ln -s dma /usr/sbin/sendmail
-
-        mkdir /var/spool/dma/
-        chown root:mail /var/spool/dma/
-        chmod 775 /var/spool/dma/
-
-        touch /var/spool/dma/flush
-        chown root:mail /var/spool/dma/flush
-        chmod 660 /var/spool/dma/flush
-
+dma is a small Mail Transport Agent (MTA), designed for home and office use.
+It accepts mails from locally installed Mail User Agents (MUA) and delivers
+the mails either locally or to a remote destination.
+Remote delivery includes several features like TLS/SSL support and SMTP authentication.

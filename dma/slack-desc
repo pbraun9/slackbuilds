@@ -6,14 +6,14 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
    |-----handy-ruler------------------------------------------------------|
-dma: DMA (DragonFlyBSD Mail Agent)
-dma: 
-dma: Small and efficient outbound STARTTLS-calable MTA.
+dma: dma (DragonFlyBSD Mail Agent)
+dma:
+dma: dma is a small Mail Transport Agent (MTA), designed for home and
+dma: office use. It accepts mails from locally installed Mail User Agents
+dma: (MUA) and delivers the mails either locally or to a remote
+dma: destination. Remote delivery includes several features like TLS/SSL
+dma: support and SMTP authentication.
 dma:
 dma:
 dma:
 dma:
-dma: 
-dma: 
-dma:
-dma: 

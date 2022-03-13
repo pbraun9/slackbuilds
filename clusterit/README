@@ -1,3 +1,3 @@
 The most efficient and simple distributed shell around.
 
-ClusterIt provides the dsh command line tool.
+ClusterIt provides the dsh and pcp command line tools.
