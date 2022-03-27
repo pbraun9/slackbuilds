@@ -41,18 +41,26 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 	fence-agents
 -->
 
-FILE-SYSTEMS
+REISER4
 
-	libaal			-- UP https://slackbuilds.org/repository/15.0/libraries/libaal/
-	ocfs2-tools-preview	-- vs. https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
-	partclone-preview	-- reiser4 enabled
-				-- vs. https://slackbuilds.org/repository/15.0/system/partclone/
-	reiser4progs		-- UP https://slackbuilds.org/repository/15.0/system/reiser4progs/
+	libaal			UP/SUBMIT
+				https://slackbuilds.org/repository/15.0/libraries/libaal/
+	reiser4progs		UP/SUBMIT
+				https://slackbuilds.org/repository/15.0/system/reiser4progs/
+	partclone		SUBMIT -- reiser4 enabled
+				https://slackbuilds.org/repository/15.0/system/partclone/
+
+OTHER FILE-SYSTEMS
+
+	ocfs2-tools-preview	TBD
+				https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
 
 MISC
 
-	clusterit
-	dma			-- UP https://slackbuilds.org/repository/15.0/network/dma/
+	clusterit		SUBMIT
+				TBD https://slackbuilds.org/repository/15.0/system/clusterit/
+	dma			UP
+				https://slackbuilds.org/repository/15.0/network/dma/
 
 Binaries for those builds are available [over there](https://lab.nethence.com/slackpkgs/)
 
