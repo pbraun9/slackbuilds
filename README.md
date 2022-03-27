@@ -22,28 +22,28 @@ https://slackbuilds.org/repository/15.0/system/partclone/
 ## PREVIEWS
 
 colordiff update to 1.0.20
-vs. https://slackbuilds.org/repository/15.0/development/colordiff/
+https://slackbuilds.org/repository/15.0/development/colordiff/
 
 drbd-kernel for release KVER
 (none)
 
 drbd-utils SUBMIT version update
-vs. http://slackbuilds.org/repository/15.0/system/drbd-utils/?search=drbd-utils
+http://slackbuilds.org/repository/15.0/system/drbd-utils/
 
 keepalived SUBMIT re-enable nftables and libipset
 http://slackbuilds.org/repository/15.0/network/keepalived/
 
 ocfs2-tools builds fine on multiprocessor
-vs. https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
+https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
 
 sshguard SUBMIT version update and add missing config file
-http://slackbuilds.org/repository/15.0/network/sshguard/?search=sshguard
+http://slackbuilds.org/repository/15.0/network/sshguard/
 
 syslinux-next newer version, conflicts with base
 (none)
 
 xen-nox no SDL no GTK no FUSE and older xenstore daemon
-vs. https://slackbuilds.org/repository/15.0/system/xen/
+https://slackbuilds.org/repository/15.0/system/xen/
 
 <!--
 	libvirt-preview		-- updated version (meson build)

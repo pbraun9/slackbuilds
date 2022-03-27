@@ -110,9 +110,6 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;
 
-# Remove dead symlink
-unlink $PKG/usr/man/man8/drbd-overview.8 || true
-
 # Unbreak manpage symlinks after gzip (above)
 find $PKG/usr/man -type l ! -name '*.gz' \
   -exec bash -c 'ln -s $(readlink $1).gz $1.gz && unlink $1' doh {} \;
