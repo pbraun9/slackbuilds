@@ -22,6 +22,6 @@ preserve_perms() {
   config $NEW
 }
 
-preserve_perms etc/rc.d/init.d/drbd.new
+preserve_perms etc/rc.d/rc.drbd.new
 preserve_perms etc/drbd.conf.new
 preserve_perms etc/drbd.d/global_common.conf.new

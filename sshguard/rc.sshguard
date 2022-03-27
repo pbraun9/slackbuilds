@@ -1,32 +1,45 @@
-#!/bin/bash
+#!/bin/sh
 
-function start {
-	[[ -f /var/run/sshguard.pid ]] && echo old pid file is there && exit 1
-        echo Starting sshguard daemon
-        echo >> /var/log/sshguard.log
-        date >> /var/log/sshguard.log
-        exec /usr/local/sbin/sshguard >> /var/log/sshguard.log 2>&1 &
+################################################################################
+sshguard_start() {
+################################################################################
+  if [ -n "$(pidof sshguard)" ]; then
+    echo "sshguard seems to be already running."
+    return
+  fi
+
+  /usr/sbin/sshguard -l /var/log/messages 1>/dev/null &
 }
 
-function status {
-	if [[ -e /var/run/sshguard.pid ]]; then
-		echo sshguard is running as pid `cat /var/run/sshguard.pid`
-	else
-		echo sshguard is stopped
-	fi
+################################################################################
+sshguard_stop() {
+################################################################################
+  if [ -z "$(pidof sshguard)" ]; then
+    echo "sshguard does not seem to be running."
+    return
+  fi
+
+  kill $(pidof sshguard)
 }
 
-function stop {
-        echo Stopping sshguard daemon
-	killall sshguard
-        rm -f /var/run/sshguard.pid
+################################################################################
+sshguard_restart() {
+################################################################################
+  sshguard_stop
+  sleep 1
+  sshguard_start
 }
 
-case $1 in
-	start)		start ;;
-	status)		status ;;
-	stop)		stop ;;
-	restart)	stop; start ;;
-	*)		echo "usage $0 start|status|stop|restart"; exit 1 ;;
+case "$1" in
+'start')
+  sshguard_start
+  ;;
+'stop')
+  sshguard_stop
+  ;;
+'restart')
+  sshguard_restart
+  ;;
+*)
+  echo "usage: $0 start|stop|restart"
 esac
-
