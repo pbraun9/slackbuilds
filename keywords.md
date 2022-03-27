@@ -16,6 +16,10 @@ clusterit
 
 	distributed,shell,distributed shell,pdsh,remote,ansible
 
+keepalived
+
+	ha,high availability,health check,lvs,load balance,vrrp,carp
+
 <!--
 linuxha
 

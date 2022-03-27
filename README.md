@@ -29,8 +29,8 @@ BOOTING
 
 VRRP
 
-	keepalived-preview	-- nftables and libipset re-enabled
-				-- vs. http://slackbuilds.org/repository/15.0/network/keepalived/
+	keepalived		SUBMIT -- re-enable nftables and libipset
+				http://slackbuilds.org/repository/15.0/network/keepalived/
 
 <!--
 Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
@@ -43,22 +43,22 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 
 REISER4
 
-	libaal			UP/SUBMIT
+	libaal			UP
 				https://slackbuilds.org/repository/15.0/libraries/libaal/
-	reiser4progs		UP/SUBMIT
+	reiser4progs		UP
 				https://slackbuilds.org/repository/15.0/system/reiser4progs/
-	partclone		SUBMIT -- reiser4 enabled
+	partclone		SUBMIT -- enable reiser4
 				https://slackbuilds.org/repository/15.0/system/partclone/
 
 OTHER FILE-SYSTEMS
 
 	ocfs2-tools-preview	TBD
-				https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
+				vs. https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
 
 MISC
 
-	clusterit		SUBMIT
-				TBD https://slackbuilds.org/repository/15.0/system/clusterit/
+	clusterit		SUBMIT -- new package
+				https://slackbuilds.org/repository/15.0/system/clusterit/
 	dma			UP
 				https://slackbuilds.org/repository/15.0/network/dma/
 
