@@ -4,25 +4,22 @@ Binaries for those builds are available [over there](https://lab.nethence.com/sl
 
 ## MAINTAINED
 
-clusterit SUBMIT -- new package
-https://slackbuilds.org/repository/15.0/system/clusterit/
+clusterit 2.5 UP
+https://slackbuilds.org/repository/15.0/network/clusterit/
 
-dma UP
+dma 0.13 UP
 https://slackbuilds.org/repository/15.0/network/dma/
 
-libaal UP
+libaal 1.0.7 UP
 https://slackbuilds.org/repository/15.0/libraries/libaal/
 
-reiser4progs UP
+reiser4progs 1.2.2 UP
 https://slackbuilds.org/repository/15.0/system/reiser4progs/
 
-partclone SUBMIT enable reiser4
+partclone 2.3.19 SUBMIT enable reiser4
 https://slackbuilds.org/repository/15.0/system/partclone/
 
 ## PREVIEWS
-
-colordiff update to 1.0.20
-https://slackbuilds.org/repository/15.0/development/colordiff/
 
 drbd-kernel for release KVER
 (none)
