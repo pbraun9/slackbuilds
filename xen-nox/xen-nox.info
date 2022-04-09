@@ -1,10 +1,10 @@
 PRGNAM="xen-nox"
 VERSION="f50ef17"
 HOMEPAGE="https://xenproject.org/"
-DOWNLOAD="https://lab.nethence.com/nunux/xen-f50ef17.tar.gz \
-	https://lab.nethence.com/nunux/qemu-xen-b6e5398.tar.gz"
-MD5SUM="0ffbf8eaf8a6d7bbf6574bb5c1a780d8 \
-	def41ba83e96efac8e2d65ceea13f747"
+DOWNLOAD="https://lab.nethence.com/tarballs/xen-f50ef17.tar.gz \
+	https://lab.nethence.com/tarballs/qemu-xen-b6e5398.tar.gz"
+MD5SUM="7ce0690c03f5ab7cc269323c78358eb4 \
+	a7a88fab4c130ad80a4e0c988448fa2b"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
 REQUIRES="acpica yajl python3-ninja"
