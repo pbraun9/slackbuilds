@@ -20,9 +20,9 @@ keepalived
 
 	ha,high availability,health check,lvs,load balance,vrrp,carp
 
-xen-nox & python3-ninja
+xen-nox
 
-	xen,kvm,vmm,virtualization,libvirt
+	xen,kvm,vmm,virtualization,libvirt,cloud
 
 <!--
 linuxha

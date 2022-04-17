@@ -2,14 +2,14 @@
 
 # Slackware build script for xen-nox
 
+cd $(dirname $0) ; CWD=$(pwd)
+
 PRGNAM=xen-nox
 SRCNAM=xen
-VERSION=${VERSION:-f50ef17}
+VERSION=${VERSION:-4.16.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
-
-QVER=b6e5398
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -17,6 +17,11 @@ if [ -z "$ARCH" ]; then
     arm*) ARCH=arm ;;
        *) ARCH=$( uname -m ) ;;
   esac
+fi
+
+if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
+  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
+  exit 0
 fi
 
 TMP=${TMP:-/tmp/SBo}
@@ -46,11 +51,7 @@ cd $TMP
 rm -rf $SRCNAM
 tar xvf $CWD/$SRCNAM-$VERSION.tar.gz
 
-tar xzf $CWD/qemu-xen-$QVER.tar.gz -C $SRCNAM/tools/
-# no need for a versioned symlinks as we've tarred-up the repo without a version
-#ln -s qemu-xen-$QVER $SRCNAM/tools/qemu-xen
-
-cd $SRCNAM
+cd $SRCNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
@@ -100,6 +101,8 @@ mkdir -p $PKG/usr/man
 make install-xen DESTDIR=$PKG
 make install-tools DESTDIR=$PKG
 make install-docs DESTDIR=$PKG
+
+rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true

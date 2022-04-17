@@ -11,7 +11,7 @@ xen-nox:
 xen-nox: The xen-nox package contains the XEN micro-kernel and tools for PV
 xen-nox: and PVH modes, including the good old xenstore daemon written in C.
 xen-nox:
-xen-nox:
+xen-nox: QEMU-XEN is built without X11 support (no GTK, SDL nor OpenGL).
 xen-nox:
 xen-nox:
 xen-nox:
