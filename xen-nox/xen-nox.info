@@ -1,6 +1,6 @@
 PRGNAM="xen-nox"
 VERSION="4.16.1"
-HOMEPAGE="https://downloads.xenproject.org/release/xen/"
+HOMEPAGE="https://xenproject.org/xen-project-archives/"
 DOWNLOAD="https://downloads.xenproject.org/release/xen/4.16.1/xen-4.16.1.tar.gz"
 MD5SUM="1c2cd4f7f966c1d455aab630953e5fad"
 DOWNLOAD_x86_64=""

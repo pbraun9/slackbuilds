@@ -102,6 +102,9 @@ make install-xen DESTDIR=$PKG
 make install-tools DESTDIR=$PKG
 make install-docs DESTDIR=$PKG
 
+# /usr/lib/xen/bin/pygrub
+rm -f $PKG/usr/bin/pygrub
+
 rm -f $PKG/{,usr/}lib${LIBDIRSUFFIX}/*.la
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
