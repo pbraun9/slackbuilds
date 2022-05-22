@@ -6,7 +6,7 @@
 # customary to leave one space after the ':' except on otherwise blank lines.
 
        |-----handy-ruler------------------------------------------------------|
-xen-nox: Xen Project Hypervisor
+xen-nox: xen-nox (Xen Project Hypervisor)
 xen-nox:
 xen-nox: The xen-nox package contains the XEN micro-kernel and tools for PV
 xen-nox: and PVH modes, including the good old xenstore daemon written in C.
