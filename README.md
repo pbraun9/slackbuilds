@@ -14,6 +14,9 @@ https://slackbuilds.org/repository/15.0/libraries/libaal/
 reiser4progs
 https://slackbuilds.org/repository/15.0/system/reiser4progs/
 
+xen-nox 4.16.1 no SDL no GTK no FUSE and older xenstore daemon
+https://slackbuilds.org/repository/15.0/system/xen/
+
 ## Previews and patch proposals
 
 drbd-kernel for release KVER
@@ -40,9 +43,6 @@ by Andrzej Telszewski
 
 syslinux-next 6.04-debian conflicts with base
 (none)
-
-xen-nox 4.16.1 no SDL no GTK no FUSE and older xenstore daemon
-https://slackbuilds.org/repository/15.0/system/xen/
 
 ## Results
 
