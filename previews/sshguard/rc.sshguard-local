@@ -1,9 +1,9 @@
 #!/bin/bash
 
 function start {
-	[[ -f /var/run/sshguard.pid ]] && echo old pid file is there && exit 1
+	[[ -f /var/run/sshguard.pid ]] && status && exit 1
         echo Starting sshguard daemon
-        exec /usr/local/sbin/sshguard >> /var/log/sshguard.log 2>&1 &
+        exec /usr/sbin/sshguard >> /var/log/sshguard.log 2>&1 &
 }
 
 function status {
@@ -25,6 +25,6 @@ case $1 in
 	status)		status ;;
 	stop)		stop ;;
 	restart)	stop; start ;;
-	*)		echo "usage $0 start|status|stop|restart"; exit 1 ;;
+	*)		echo "usage $0 start|status|stop|restart" ; exit 1 ;;
 esac
 
