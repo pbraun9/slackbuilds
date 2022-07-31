@@ -11,11 +11,14 @@ https://slackbuilds.org/repository/15.0/network/dma/
 libaal
 https://slackbuilds.org/repository/15.0/libraries/libaal/
 
+partclone with reiser4
+https://slackbuilds.org/repository/15.0/system/partclone/
+
 reiser4progs
 https://slackbuilds.org/repository/15.0/system/reiser4progs/
 
-xen-nox 4.16.1 no SDL no GTK no FUSE and older xenstore daemon
-https://slackbuilds.org/repository/15.0/system/xen/
+xen-nox no SDL no GTK no FUSE and older xenstore daemon
+https://slackbuilds.org/repository/15.0/system/xen-nox/
 
 ## Previews and patch proposals
 
@@ -33,9 +36,6 @@ by Marek Wodzinski
 ocfs2-tools 1.8.7 version update and builds fine on multiprocessor
 https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
 by Mario Preksavec
-
-partclone 2.3.20 enable reiser4
-https://slackbuilds.org/repository/15.0/system/partclone/
 
 sshguard 2.4.2 version update and add missing config file
 http://slackbuilds.org/repository/15.0/network/sshguard/
