@@ -37,7 +37,7 @@ ocfs2-tools 1.8.7 version update and builds fine on multiprocessor
 https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
 by Mario Preksavec
 
-sshguard 2.4.2 version update and add missing config file
+sshguard - better init script
 http://slackbuilds.org/repository/15.0/network/sshguard/
 by Andrzej Telszewski
 

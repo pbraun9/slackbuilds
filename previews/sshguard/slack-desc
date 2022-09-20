@@ -8,11 +8,11 @@
         |-----handy-ruler------------------------------------------------------|
 sshguard: sshguard (SSH brute-force attack protection)
 sshguard:
-sshguard: sshguard protects hosts from brute-force attacks against SSH and
-sshguard: other services. It aggregates system logs and blocks repeat offenders
-sshguard: using one of several firewall backends, including iptables, ipfw, and
-sshguard: pf.
+sshguard: sshguard protects hosts from brute-force attacks against SSH and other
+sshguard: services. It aggregates system logs and blocks repeat offenders using
+sshguard: one of several firewall backends, including iptables, ipfw, and pf.
 sshguard:
+sshguard: Homepage: https://www.sshguard.net/
 sshguard:
 sshguard:
 sshguard:
