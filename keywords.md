@@ -20,6 +20,10 @@ keepalived
 
 	ha,high availability,health check,lvs,load balance,vrrp,carp
 
+systraq
+
+	ids,security,aide,monitor,notify
+
 xen-nox
 
 	xen,kvm,vmm,virtualization,libvirt,cloud
