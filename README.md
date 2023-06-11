@@ -20,6 +20,9 @@ https://slackbuilds.org/repository/15.0/system/reiser4progs/
 xen-nox no SDL no GTK no FUSE and older xenstore daemon
 https://slackbuilds.org/repository/15.0/system/xen-nox/
 
+systraq
+http://slackbuilds.org/repository/15.0/system/systraq/
+
 ## Previews and patch proposals
 
 drbd-kernel for release KVER
@@ -44,7 +47,7 @@ by Andrzej Telszewski
 syslinux-next 6.04-debian conflicts with base
 (none)
 
-## Results
+## Builds
 
 Binaries for those builds are available [over there](https://lab.nethence.com/slackpkgs/)
 
