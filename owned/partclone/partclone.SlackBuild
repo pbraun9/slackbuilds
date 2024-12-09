@@ -25,7 +25,7 @@
 cd $(dirname $0) ; CWD=$(pwd)
 
 PRGNAM=partclone
-VERSION=${VERSION:-0.3.20}
+VERSION=${VERSION:-0.3.32}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_SBo}
 PKGTYPE=${PKGTYPE:-tgz}
@@ -110,7 +110,7 @@ find $PKG/usr/man -type f -exec gzip -9 {} \;
 for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a ABOUT-NLS AUTHORS btrfs_source.txt ChangeLog COPYING HACKING IMAGE_FORMATS.md NEWS README.md TODO \
+cp -a ABOUT-NLS AUTHORS ChangeLog COPYING HACKING IMAGE_FORMATS.md INSTALL NEWS README.md \
   $PKG/usr/doc/$PRGNAM-$VERSION
 cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
 

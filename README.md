@@ -5,23 +5,37 @@
 clusterit
 https://slackbuilds.org/repository/15.0/network/clusterit/
 
+    distributed,shell,distributed shell,pdsh,remote,ansible
+
 dma
 https://slackbuilds.org/repository/15.0/network/dma/
+
+    email,smtp,mail,sendmail,null,client,nullclient,null-client,mta,msa,mua
 
 libaal
 https://slackbuilds.org/repository/15.0/libraries/libaal/
 
+    reiser,reiserfs,reiser4,libaal,reiser4progs,filesystem,file-system,compression,btrfs,partclone
+
 partclone with reiser4
 https://slackbuilds.org/repository/15.0/system/partclone/
+
+    partclone,clone,image,filesystem,file-system,restore,reiser4,btrfs
 
 reiser4progs
 https://slackbuilds.org/repository/15.0/system/reiser4progs/
 
+    reiser,reiserfs,reiser4,libaal,reiser4progs,filesystem,file-system,compression,btrfs,partclone
+
 xen-nox no SDL no GTK no FUSE and older xenstore daemon
 https://slackbuilds.org/repository/15.0/system/xen-nox/
 
+    xen,kvm,vmm,virtualization,libvirt,cloud
+
 systraq
 http://slackbuilds.org/repository/15.0/system/systraq/
+
+    ids,security,aide,monitor,notify
 
 ## Previews and patch proposals
 
@@ -32,9 +46,12 @@ drbd-utils 9.20.2 version update
 http://slackbuilds.org/repository/15.0/system/drbd-utils/
 by Mario Preksavec
 
-keepalived 2.2.7 re-enable nftables and libipset
+<!--
+keepalived by Marek Wodzinski - re-enable nftables and libipset
 http://slackbuilds.org/repository/15.0/network/keepalived/
-by Marek Wodzinski
+
+    ha,high availability,health check,lvs,load balance,vrrp,carp
+-->
 
 ocfs2-tools 1.8.7 version update and builds fine on multiprocessor
 https://slackbuilds.org/repository/15.0/system/ocfs2-tools/
@@ -64,5 +81,7 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
 	heartbeat
 	resource-agents
 	fence-agents
+
+    cluster,clusterlabs,linuxha,linux-ha,clusterlabs,HA,high-availability,high availability,fault-tolerance,fault tolerance,load-balancing,load balancing
 -->
 
