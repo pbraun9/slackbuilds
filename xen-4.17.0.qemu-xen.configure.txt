@@ -1,0 +1,263 @@
+Using './build' as the directory for build output
+
+Usage: configure [options]
+Options: [defaults in brackets after descriptions]
+
+Standard options:
+  --help                   print this message
+  --prefix=PREFIX          install in PREFIX [/usr/local]
+  --interp-prefix=PREFIX   where to find shared libraries, etc.
+                           use %M for cpu name [/usr/gnemul/qemu-%M]
+  --target-list=LIST       set target list (default: build all)
+                           Available targets: aarch64-softmmu alpha-softmmu 
+                           arm-softmmu avr-softmmu cris-softmmu hppa-softmmu 
+                           i386-softmmu m68k-softmmu microblazeel-softmmu 
+                           microblaze-softmmu mips64el-softmmu mips64-softmmu 
+                           mipsel-softmmu mips-softmmu nios2-softmmu 
+                           or1k-softmmu ppc64-softmmu ppc-softmmu 
+                           riscv32-softmmu riscv64-softmmu rx-softmmu 
+                           s390x-softmmu sh4eb-softmmu sh4-softmmu 
+                           sparc64-softmmu sparc-softmmu tricore-softmmu 
+                           x86_64-softmmu xtensaeb-softmmu xtensa-softmmu 
+                           aarch64_be-linux-user aarch64-linux-user 
+                           alpha-linux-user armeb-linux-user arm-linux-user 
+                           cris-linux-user hexagon-linux-user hppa-linux-user 
+                           i386-linux-user m68k-linux-user 
+                           microblazeel-linux-user microblaze-linux-user 
+                           mips64el-linux-user mips64-linux-user 
+                           mipsel-linux-user mips-linux-user 
+                           mipsn32el-linux-user mipsn32-linux-user 
+                           nios2-linux-user or1k-linux-user ppc64le-linux-user 
+                           ppc64-linux-user ppc-linux-user riscv32-linux-user 
+                           riscv64-linux-user s390x-linux-user sh4eb-linux-user 
+                           sh4-linux-user sparc32plus-linux-user 
+                           sparc64-linux-user sparc-linux-user 
+                           x86_64-linux-user xtensaeb-linux-user 
+                           xtensa-linux-user
+  --target-list-exclude=LIST exclude a set of targets from the default target-list
+
+Advanced options (experts only):
+  --cross-prefix=PREFIX    use PREFIX for compile tools, PREFIX can be blank []
+  --cc=CC                  use C compiler CC [cc]
+  --iasl=IASL              use ACPI compiler IASL [iasl]
+  --host-cc=CC             use C compiler CC [cc] for code run at
+                           build time
+  --cxx=CXX                use C++ compiler CXX [c++]
+  --objcc=OBJCC            use Objective-C compiler OBJCC [clang]
+  --extra-cflags=CFLAGS    append extra C compiler flags CFLAGS
+  --extra-cxxflags=CXXFLAGS append extra C++ compiler flags CXXFLAGS
+  --extra-objcflags=OBJCFLAGS append extra Objective C compiler flags OBJCFLAGS
+  --extra-ldflags=LDFLAGS  append extra linker flags LDFLAGS
+  --cross-cc-ARCH=CC       use compiler when building ARCH guest test cases
+  --cross-cc-cflags-ARCH=  use compiler flags when building ARCH guest tests
+  --make=MAKE              use specified make [make]
+  --python=PYTHON          use specified python [/usr/bin/python3]
+  --sphinx-build=SPHINX    use specified sphinx-build []
+  --meson=MESON            use specified meson []
+  --ninja=NINJA            use specified ninja []
+  --smbd=SMBD              use specified smbd []
+  --with-git=GIT           use specified git [git]
+  --with-git-submodules=update   update git submodules (default if .git dir exists)
+  --with-git-submodules=validate fail if git submodules are not up to date
+  --with-git-submodules=ignore   do not update or check git submodules (default if no .git dir)
+  --static                 enable static build [no]
+  --mandir=PATH            install man pages in PATH
+  --datadir=PATH           install firmware in PATH/qemu
+  --localedir=PATH         install translation in PATH/qemu
+  --docdir=PATH            install documentation in PATH/qemu
+  --bindir=PATH            install binaries in PATH
+  --libdir=PATH            install libraries in PATH
+  --libexecdir=PATH        install helper binaries in PATH
+  --sysconfdir=PATH        install config in PATH/qemu
+  --localstatedir=PATH     install local state in PATH (set at runtime on win32)
+  --firmwarepath=PATH      search PATH for firmware files
+  --efi-aarch64=PATH       PATH of efi file to use for aarch64 VMs.
+  --with-suffix=SUFFIX     suffix for QEMU data inside datadir/libdir/sysconfdir/docdir [qemu]
+  --with-pkgversion=VERS   use specified string as sub-version of the package
+  --without-default-features default all --enable-* options to "disabled"
+  --without-default-devices  do not include any device that is not needed to
+                           start the emulator (only use if you are including
+                           desired devices in configs/devices/)
+  --with-devices-ARCH=NAME override default configs/devices
+  --enable-debug           enable common debug build options
+  --enable-sanitizers      enable default sanitizers
+  --enable-tsan            enable thread sanitizer
+  --disable-werror         disable compilation abort on warning
+  --disable-stack-protector disable compiler-provided stack protection
+  --audio-drv-list=LIST    set audio drivers to try if -audiodev is not used
+  --block-drv-whitelist=L  Same as --block-drv-rw-whitelist=L
+  --block-drv-rw-whitelist=L
+                           set block driver read-write whitelist
+                           (by default affects only QEMU, not tools like qemu-img)
+  --block-drv-ro-whitelist=L
+                           set block driver read-only whitelist
+                           (by default affects only QEMU, not tools like qemu-img)
+  --with-trace-file=NAME   Full PATH,NAME of file to store traces
+                           Default:trace-<pid>
+  --cpu=CPU                Build for host CPU [x86_64]
+  --with-coroutine=BACKEND coroutine backend. Supported options:
+                           ucontext, sigaltstack, windows
+  --enable-gcov            enable test coverage analysis with gcov
+  --tls-priority           default TLS protocol/cipher priority string
+  --enable-plugins
+                           enable plugins via shared library loading
+  --disable-containers     don't use containers for cross-building
+  --gdb=GDB-path           gdb to use for gdbstub tests [/usr/bin/gdb]
+  --enable-block-drv-whitelist-in-tools
+                           use block whitelist also in tools instead of only
+                           QEMU
+  --enable-capstone[=CHOICE]
+                           Whether and how to find the capstone library
+                           (choices: auto/disabled/enabled/internal/system)
+  --enable-cfi             Control-Flow Integrity (CFI)
+  --enable-cfi-debug       Verbose errors in case of CFI violation
+  --disable-coroutine-pool coroutine freelist (better performance)
+  --enable-debug-mutex     mutex debugging support
+  --enable-debug-stack-usage
+                           measure coroutine stack usage
+  --enable-fdt[=CHOICE]    Whether and how to find the libfdt library
+                           (choices: auto/disabled/enabled/internal/system)
+  --enable-fuzzing         build fuzzing targets
+  --enable-gprof           QEMU profiling with gprof
+  --disable-install-blobs  install provided firmware blobs
+  --enable-malloc=CHOICE   choose memory allocator to use [system] (choices:
+                           jemalloc/system/tcmalloc)
+  --enable-profiler        profiler support
+  --enable-qom-cast-debug  cast debugging support
+  --enable-rng-none        dummy RNG, avoid using /dev/(u)random and
+                           getrandom()
+  --enable-slirp[=CHOICE]  Whether and how to find the slirp library
+                           (choices: auto/disabled/enabled/internal/system)
+  --enable-strip           Strip targets on install
+  --enable-tcg-interpreter TCG with bytecode interpreter (slow)
+  --enable-trace-backends=CHOICE
+                           Set available tracing backends [log] (choices:
+                           dtrace/ftrace/log/nop/simple/syslog/ust)
+
+Optional features, enabled with --enable-FEATURE and
+disabled with --disable-FEATURE, default is enabled if available
+(unless built with --without-default-features):
+
+  alsa            ALSA sound support
+  attr            attr/xattr support
+  auth-pam        PAM access control
+  avx2            AVX2 optimizations
+  avx512f         AVX512F optimizations
+  bochs           bochs image format support
+  bpf             eBPF support
+  brlapi          brlapi character device driver
+  bzip2           bzip2 support for DMG images
+  cap-ng          cap_ng support
+  cloop           cloop image format support
+  cocoa           Cocoa user interface (macOS only)
+  coreaudio       CoreAudio sound support
+  crypto-afalg    Linux AF_ALG crypto backend driver
+  curl            CURL block device driver
+  curses          curses UI
+  dbus-display    -display dbus support
+  dmg             dmg image format support
+  docs            Documentations build support
+  dsound          DirectSound sound support
+  fuse            FUSE block device export
+  fuse-lseek      SEEK_HOLE/SEEK_DATA support for FUSE exports
+  gcrypt          libgcrypt cryptography support
+  gettext         Localization of the GTK+ user interface
+  glusterfs       Glusterfs block device driver
+  gnutls          GNUTLS cryptography support
+  gtk             GTK+ user interface
+  guest-agent     Build QEMU Guest Agent
+  guest-agent-msi Build MSI package for the QEMU Guest Agent
+  hax             HAX acceleration support
+  hvf             HVF acceleration support
+  iconv           Font glyph conversion support
+  jack            JACK sound support
+  kvm             KVM acceleration support
+  l2tpv3          l2tpv3 network backend support
+  libdaxctl       libdaxctl support
+  libiscsi        libiscsi userspace initiator
+  libnfs          libnfs block device driver
+  libpmem         libpmem support
+  libssh          ssh block device support
+  libudev         Use libudev to enumerate host devices
+  libusb          libusb support for USB passthrough
+  linux-aio       Linux AIO support
+  linux-io-uring  Linux io_uring support
+  live-block-migration
+                  block migration in the main migration stream
+  lzfse           lzfse support for DMG images
+  lzo             lzo compression support
+  malloc-trim     enable libc malloc_trim() for memory optimization
+  membarrier      membarrier system call (for Linux 4.14+ or Windows
+  mpath           Multipath persistent reservation passthrough
+  multiprocess    Out of process device emulation support
+  netmap          netmap network backend support
+  nettle          nettle cryptography support
+  numa            libnuma support
+  nvmm            NVMM acceleration support
+  oss             OSS sound support
+  pa              PulseAudio sound support
+  parallels       parallels image format support
+  qcow1           qcow1 image format support
+  qed             qed image format support
+  qga-vss         build QGA VSS support (broken with MinGW)
+  rbd             Ceph block device driver
+  replication     replication support
+  sdl             SDL user interface
+  sdl-image       SDL Image support for icons
+  seccomp         seccomp support
+  selinux         SELinux support in qemu-nbd
+  slirp-smbd      use smbd (at path --smbd=*) in slirp networking
+  smartcard       CA smartcard emulation support
+  snappy          snappy compression support
+  sparse          sparse checker
+  spice           Spice server support
+  spice-protocol  Spice protocol support
+  tcg             TCG support
+  tools           build support utilities that come with QEMU
+  tpm             TPM support
+  u2f             U2F emulation support
+  usb-redir       libusbredir support
+  vde             vde network backend support
+  vdi             vdi image format support
+  vhost-user-blk-server
+                  build vhost-user-blk server
+  virglrenderer   virgl rendering support
+  virtfs          virtio-9p support
+  virtiofsd       build virtiofs daemon (virtiofsd)
+  vnc             VNC server
+  vnc-jpeg        JPEG lossy compression for VNC server
+  vnc-png         PNG compression for VNC server
+  vnc-sasl        SASL authentication for VNC server
+  vte             vte support for the gtk UI
+  vvfat           vvfat image format support
+  whpx            WHPX acceleration support
+  xen             Xen backend support
+  xen-pci-passthrough
+                  Xen PCI passthrough support
+  xkbcommon       xkbcommon support
+  zstd            zstd compression support
+  system          all system emulation targets
+  user            supported user emulation targets
+  linux-user      all linux usermode emulation targets
+  bsd-user        all BSD usermode emulation targets
+  pie             Position Independent Executables
+  modules         modules support (non-Windows)
+  module-upgrades try to load modules from alternate paths for upgrades
+  debug-tcg       TCG debugging (default is disabled)
+  debug-info      debugging information
+  lto             Enable Link-Time Optimization.
+  safe-stack      SafeStack Stack Smash Protection. Depends on
+                  clang/llvm >= 3.7 and requires coroutine backend ucontext.
+  rdma            Enable RDMA-based migration
+  pvrdma          Enable PVRDMA support
+  vhost-net       vhost-net kernel acceleration support
+  vhost-vsock     virtio sockets device support
+  vhost-scsi      vhost-scsi kernel target support
+  vhost-crypto    vhost-user-crypto backend support
+  vhost-kernel    vhost kernel backend support
+  vhost-user      vhost-user backend support
+  vhost-vdpa      vhost-vdpa kernel backend support
+  opengl          opengl support
+  gio             libgio support
+
+NOTE: The object files are built at the place where configure is launched

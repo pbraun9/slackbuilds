@@ -30,7 +30,7 @@ https://slackbuilds.org/repository/15.0/system/reiser4progs/
 xen-nox no SDL no GTK no FUSE and older xenstore daemon
 https://slackbuilds.org/repository/15.0/system/xen-nox/
 
-    xen,kvm,vmm,virtualization,libvirt,cloud
+    xen,kvm,vmm,virtualization,libvirt,cloud,hypervisor
 
 systraq
 http://slackbuilds.org/repository/15.0/system/systraq/
