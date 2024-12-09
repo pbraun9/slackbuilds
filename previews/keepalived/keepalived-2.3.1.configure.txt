@@ -1,0 +1,239 @@
+`configure' configures Keepalived 2.3.1 to adapt to many kinds of systems.
+
+Usage: ./configure [OPTION]... [VAR=VALUE]...
+
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
+
+Defaults for the options are specified in brackets.
+
+Configuration:
+  -h, --help              display this help and exit
+      --help=short        display options specific to this package
+      --help=recursive    display the short help of all the included packages
+  -V, --version           display version information and exit
+  -q, --quiet, --silent   do not print `checking ...' messages
+      --cache-file=FILE   cache test results in FILE [disabled]
+  -C, --config-cache      alias for `--cache-file=config.cache'
+  -n, --no-create         do not create output files
+      --srcdir=DIR        find the sources in DIR [configure dir or `..']
+
+Installation directories:
+  --prefix=PREFIX         install architecture-independent files in PREFIX
+                          [/usr/local]
+  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+                          [PREFIX]
+
+By default, `make install' will install all the files in
+`/usr/local/bin', `/usr/local/lib' etc.  You can specify
+an installation prefix other than `/usr/local' using `--prefix',
+for instance `--prefix=$HOME'.
+
+For better control, use the options below.
+
+Fine tuning of the installation directories:
+  --bindir=DIR            user executables [EPREFIX/bin]
+  --sbindir=DIR           system admin executables [EPREFIX/sbin]
+  --libexecdir=DIR        program executables [EPREFIX/libexec]
+  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
+  --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
+  --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+  --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
+  --libdir=DIR            object code libraries [EPREFIX/lib]
+  --includedir=DIR        C header files [PREFIX/include]
+  --oldincludedir=DIR     C header files for non-gcc [/usr/include]
+  --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
+  --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
+  --infodir=DIR           info documentation [DATAROOTDIR/info]
+  --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
+  --mandir=DIR            man documentation [DATAROOTDIR/man]
+  --docdir=DIR            documentation root [DATAROOTDIR/doc/keepalived]
+  --htmldir=DIR           html documentation [DOCDIR]
+  --dvidir=DIR            dvi documentation [DOCDIR]
+  --pdfdir=DIR            pdf documentation [DOCDIR]
+  --psdir=DIR             ps documentation [DOCDIR]
+
+Program names:
+  --program-prefix=PREFIX            prepend PREFIX to installed program names
+  --program-suffix=SUFFIX            append SUFFIX to installed program names
+  --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
+
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-silent-rules   less verbose build output (undo: "make V=1")
+  --disable-silent-rules  verbose build output (undo: "make V=0")
+  --disable-lvs-syncd     do not use LVS synchronization daemon
+  --disable-lvs           do not use the LVS framework
+  --disable-lvs-64bit-stats
+                          do not use the LVS 64-bit stats
+  --disable-vrrp          do not use the VRRP framework
+  --enable-bfd            use the BFD framework
+  --disable-fwmark        compile without SO_MARK support
+  --enable-snmp           compile with SNMP support
+  --enable-snmp-vrrp      compile with SNMP vrrp support
+  --enable-snmp-keepalived
+                          obsolete - use --enable-snmp-vrrp
+  --enable-snmp-checker   compile with SNMP checker support
+  --enable-snmp-rfc       compile with SNMP RFC2787 (VRRPv2) and SNMP RFC6527
+                          (VRRPv3) support
+  --enable-snmp-rfcv2     compile with SNMP RFC2787 (VRRPv2) support
+  --enable-snmp-rfcv3     compile with SNMP RFC6527 (VRRPv3) support
+  --disable-snmp-reply-v3-for-v2
+                          disable RFC6527 responses for VRRPv2 instances
+  --enable-dbus           compile with dbus support
+  --enable-dbus-create-instance
+                          compile with dbus support for creating instances
+  --enable-regex          build with HTTP_GET regex checking
+  --disable-vmac          build without VMAC support
+  --enable-nm             enable setting VMACs unmanaged by NetworkManager
+                          (for pre 1.18 NM)
+  --enable-regex-timers   build with HTTP_GET regex timers
+  --enable-json           compile with signal to dump configuration and stats
+                          as json
+  --enable-clang          use clang compiler
+  --enable-lto            use Link Time Optimisation
+  --enable-reproducible-build
+                          make builds reproducible
+  --disable-vrrp-auth     compile without VRRP authentication
+  --disable-checksum-compat
+                          compile without v1.3.6 and earlier VRRPv3 unicast
+                          checksum compatibility
+  --disable-routes        compile without ip rules/routes
+  --disable-linkbeat      build without linkbeat support
+  --enable-sockaddr-storage
+                          build using sockaddr_storage rather than smaller
+                          sockaddr for IPv4/6 only
+  --enable-gnu-std-paths  use GNU standard paths for pid files etc
+  --enable-dynamic-linking
+                          compile with/without dynamically linked
+                          libiptc/libipset/libnl
+  --disable-iptables      compile without iptables support
+  --enable-libiptc-dynamic
+                          compile with libiptc dynamically linked
+  --disable-libipset-dynamic
+                          compile with libipset statically linked
+  --enable-libnl-dynamic  compile with libnl dynamically linked
+  --disable-libipset      compile without libipset
+  --disable-nftables      build without nftables support
+  --disable-libnl         compile without libnl
+  --disable-track-process build without track-process functionality
+  --disable-systemd       build without systemd integration
+  --enable-strict-config-checks
+                          build with strict configuration checking
+  --disable-hardening     do not build with security hardening
+  --enable-optimise       compiler optimisation level
+  --enable-warnings[=WARNINGS]
+                          additional compiler warnings, disable for reduced
+                          set
+  --enable-extra-warnings extra compiler warnings that will probably produce
+                          many warnings
+  --enable-mem-check      compile with memory alloc checking - e.g. no writes
+                          before or after buffer, everything allocated is
+                          freed
+  --enable-mem-check-log  compile with memory alloc checking writing to syslog
+  --enable-openssl-mem-check
+                          compile with OpenSSL memory alloc checking - e.g. no
+                          writes before or after buffer, everything allocated
+                          is freed
+  --enable-malloc-check   compile with malloc checking - i.e. malloc etc
+                          returning NULL
+  --enable-timer-check    compile with set time logging
+  --enable-debug          compile with most debugging options
+  --enable-netlink-timers compile with netlink command timers
+  --enable-smtp-alert-debug
+                          compile with smtp-alert debugging
+  --enable-stacktrace     compile with stacktrace support
+  --enable-perf           compile with perf performance data recording support
+                          for vrrp process
+  --enable-log-file       enable logging to file (-g)
+  --enable-dump-threads   compile with thread dumping support
+  --enable-epoll-debug    compile with epoll_wait() debugging support
+  --enable-epoll-thread-dump
+                          compile with epoll thread dumping support
+  --enable-regex-debug    compile with regex debugging support
+  --enable-tsm-debug      compile with TSM debugging support
+  --enable-vrrp-fd-debug  compile with vrrp fd debugging support
+  --enable-recvmsg-debug  compile with recvmsg() debugging support
+  --enable-eintr-debug    compile with EINTR debugging support, set to
+                          check/not check for EINTR
+  --enable-track-process-debug
+                          compile with track process debugging support, set to
+                          log all process connector events
+  --enable-parser-debug   compile with parser debugging support
+  --enable-checksum-debug compile with checksum debugging support
+  --enable-checker-debug  compile with checker debugging support
+  --enable-smtp-connect-debug
+                          compile with smtp connect debugging support
+  --enable-mem-err-debug  compile with MALLOC/FREE error debugging support
+  --enable-script-debug   compile with script termination debugging support
+  --enable-one-process-debug
+                          compile with all functionality running in a single
+                          process
+  --enable-dump-keywords  compile with keyword dumping support
+  --enable-network-timestamp
+                          compile with network timestamp debugging support
+  --enable-asserts        compile with assert() enabled
+  --enable-profile        compile with profiling flags
+  --enable-strict-cast-align
+                          compile with strict cast alignment warnings
+  --enable-cast-align-checks
+                          runtime cast alignment checks
+  --enable-cast-via-void  enable pointer cast via void * (default if warns
+                          without)
+  --disable-cast-via-void disable pointer cast via void * (default if does not
+                          warn without)
+  --enable-conversion-checks
+                          compile with conversion warnings if sensible
+  --enable-force-conversion-checks
+                          compile with conversion warnings
+  --enable-Werror         compile with warnings being errors
+  --enable-dependency-tracking
+                          do not reject slow dependency extractors
+  --disable-dependency-tracking
+                          speeds up one-time build
+
+Optional Packages:
+  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-kernel-dir=DIR   path to linux kernel source directory
+  --with-samples-dir=DIR  specify location to install sample config files
+                          [SYSCONFDIR/samples]
+  --with-init=(upstart|systemd|SYSV|SUSE|openrc)
+                          specify init type
+  --with-run-dir=PATH_TO_RUN
+                          DEPRECATED - use --runstatedir=PATH_TO_RUN
+  --with-tmp-dir=PATH_TO_TMP
+                          specify directory where run-time temporary files are
+                          to be located
+  --with-fixed-if-type=TYPE
+                          treat interface type TYPE as unchangeable
+  --with-default-config-file=FILE
+                          Default configuration file
+  --with-default-runtime-options=OPTIONS
+                          Default runtime options
+  --with-systemdsystemunitdir=DIR
+                          Directory for systemd service files
+  --with-dbus-data-dir=DIR
+                          Directory for Dbus interface files
+
+Some influential environment variables:
+  PKG_CONFIG  path to pkg-config utility
+  PKG_CONFIG_PATH
+              directories to add to pkg-config's search path
+  PKG_CONFIG_LIBDIR
+              path overriding pkg-config's built-in search path
+  CC          C compiler command
+  CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+              nonstandard directory <lib dir>
+  LIBS        libraries to pass to the linker, e.g. -l<library>
+  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+              you have headers in a nonstandard directory <include dir>
+
+Use these variables to override the choices made by `configure' or to help
+it to find libraries and programs with nonstandard names/locations.
+
+Report bugs to <keepalived-users@groups.io>.
+Keepalived home page: <http://www.keepalived.org/>.
