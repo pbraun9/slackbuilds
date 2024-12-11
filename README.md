@@ -85,3 +85,13 @@ Linux-HA [reloaded](https://pub.nethence.com/server/linuxha-oldschool)
     cluster,clusterlabs,linuxha,linux-ha,clusterlabs,HA,high-availability,high availability,fault-tolerance,fault tolerance,load-balancing,load balancing
 -->
 
+## Useful links
+
+git://git.slackbuilds.org/slackbuilds.git
+
+https://github.com/SlackBuildsOrg/slackbuilds/
+
+https://slackbuilds.org/pending/
+
+https://slackbuilds.org/ready/
+

@@ -56,6 +56,7 @@ elif [ "$ARCH" = "i686" ]; then
 elif [ "$ARCH" = "x86_64" ]; then
   SLKCFLAGS="-O2 -fPIC"
   LIBDIRSUFFIX="64"
+  #FAILMBR="prebuilt" # unused, see below
 else
   SLKCFLAGS="-O2"
   LIBDIRSUFFIX=""
@@ -72,9 +73,16 @@ cd $PRGNAM-$VERSION
 chown -R root:root .
 find -L . \
  \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
-  -o -perm 511 \) -exec chmod 755 {} \; -o \
+  -o -perm 511 \) -exec chmod 755 {} + -o \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
-  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} +
+
+# this was needed as of version 0.3.20 (boot-code build script was using dpkg-architecture instead of uname -m)
+# leaving for reference in case it ever comes up again
+# always use the prebuilt fail-mbr.bin on x86_64
+#if [ "$FAILMBR" = "prebuilt" ]; then
+#  sed -i 's,sh .*compile-mbr.sh,cp -f fail-mbr.bin.orig fail-mbr.bin,' fail-mbr/Makefile.am
+#fi
 
 ./autogen
 
